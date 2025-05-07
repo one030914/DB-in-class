@@ -18,8 +18,8 @@ try{
 
     echo "<h1>查詢結果</h1><table border='1'>";
     $first = true;
+    $found = false;
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        var_dump($stmt);
         if($first){
             echo "<tr>";
             foreach($row as $col => $_) echo "<th>$col</th>";
@@ -29,6 +29,10 @@ try{
         echo "<tr>";
         foreach($row as $val) echo "<td>".htmlspecialchars($val)."</td>";
         echo "</tr>";
+        $found = true;
+    }
+    if(!$found){
+        echo "<tr><td colspan='4'>查無資料</td></tr>";
     }
     echo "</table>";
 }catch (PDOException $e){
