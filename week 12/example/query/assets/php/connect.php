@@ -39,10 +39,3 @@ try{
     echo "Error: " . $e->getMessage();
 }
 ?>
-
-<!-- <h1>資料庫查詢</h1>
-<form action="query.php" method="POST">
-    <input type="hidden" name="id" value="<?= htmlspecialchars($dbname) ?>">
-    <textarea name="query" rows="5" cols="60"></textarea>
-    <button type="submit">執行</button>
-</form> -->
