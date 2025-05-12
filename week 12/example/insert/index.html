@@ -8,7 +8,7 @@
     <body>
         <h1>輸入學號與姓名</h1>
 		<form action="./assets/php/connect.php" method="POST">
-			<input type="text" name="sID">
+			<input type="text" name="sID" maxlength="5" placeholder="ex. U12345" required>
             <input type="text" name="sName">
 			<button type="submit">提交</button>
 		</form>

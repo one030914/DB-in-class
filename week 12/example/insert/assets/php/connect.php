@@ -27,10 +27,10 @@ try{
 
     if(count($result) == 0){
         $conn->exec($insert);
-        echo "本資料已新增完成。";
+        echo "{學號：".$sID.", 姓名：".$sName."}已建立資料~";
         exit;
     }else{
-        echo "本資料已建立完成。";
+        echo "本筆資料已建立，無法再輸入資料~";
         exit;
     }
 }catch (PDOException $e){
