@@ -4,8 +4,8 @@ if(!$sID){
     echo "請輸入學號";
     exit;
 }
-require "db.php";
 
+require "db.php";
 $conn = connect();
 if(!$conn){
     echo "連線失敗";
