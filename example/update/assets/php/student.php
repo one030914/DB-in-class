@@ -23,8 +23,22 @@ try{
         echo "<h2>查無此資料。請確認學號是否正確。</h2>";
         exit;
     }else{
-        echo '<h1>資料庫操作系統</h1>
-        <h2>修改學生</h2>
+        echo '<h1>資料庫操作系統</h1>';
+        echo "<h2>學生</h2><table border='1'>";
+        $first = true;
+        foreach($result as $row){
+            if($first){
+                echo "<tr>";
+                foreach($row as $col => $_) echo "<th>$col</th>";
+                echo "</tr>";
+                $first = false;
+            }
+            echo "<tr>";
+            foreach($row as $val) echo "<td>".htmlspecialchars($val)."</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        echo '<h2>修改學生</h2>
         <h3>輸入姓名</h3>
         <form action="update.php" method="POST">
             <input type="hidden" name="sID" value="'.$sID.'" />
