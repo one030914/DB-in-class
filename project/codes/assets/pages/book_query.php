@@ -44,44 +44,44 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <title>查詢結果</title>
     <link rel="stylesheet" href="../css/theme.css">
-    <link rel="stylesheet" href="../css/book_query.css">
 </head>
 <body>
     <?php include "./header.php"; ?>
     <main>
         <div class="main-content">
-
-            <h2>查詢結果</h2>
-            <?php if ($results): ?>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ISBN</th>
-                            <th>書名</th>
-                            <th>類型</th>
-                            <th>年份</th>
-                            <th>作者</th>
-                            <th>出版社</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($results as $row): ?>
+            <div class="book-query">
+                <h2>查詢結果</h2>
+                <?php if ($results): ?>
+                    <table>
+                        <thead>
                             <tr>
-                                <td><?= htmlspecialchars($row['ISBN']) ?></td>
-                                <td><?= htmlspecialchars($row['title']) ?></td>
-                                <td><?= htmlspecialchars($row['genre']) ?></td>
-                                <td><?= htmlspecialchars($row['year']) ?></td>
-                                <td><?= htmlspecialchars($row['author']) ?></td>
-                                <td><?= htmlspecialchars($row['publisher']) ?></td>
+                                <th>ISBN</th>
+                                <th>書名</th>
+                                <th>類型</th>
+                                <th>年份</th>
+                                <th>作者</th>
+                                <th>出版社</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            <?php else: ?>
-                <p>查無資料，請重新查詢。</p>
-            <?php endif; ?>
-        
-            <button type="button" onclick="window.location.href='../../index.php'" class="back">返回</button>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($results as $row): ?>
+                                <tr>
+                                    <td><?= htmlspecialchars($row['ISBN']) ?></td>
+                                    <td><?= htmlspecialchars($row['title']) ?></td>
+                                    <td><?= htmlspecialchars($row['genre']) ?></td>
+                                    <td><?= htmlspecialchars($row['year']) ?></td>
+                                    <td><?= htmlspecialchars($row['author']) ?></td>
+                                    <td><?= htmlspecialchars($row['publisher']) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                <?php else: ?>
+                    <p>查無資料，請重新查詢。</p>
+                <?php endif; ?>
+            
+                <button type="button" onclick="window.location.href='../../index.php'" class="btn-back">返回</button>
+            </div>
         </div>
     </main>
     <?php include "./footer.php"; ?>

@@ -1,7 +1,8 @@
-<div class="main-content">
+<div id="book-search">
     <h2>書本查詢</h2>
-    <form action="./assets/pages/book_query.php" method="post" class="form-container">
+    <form action="/assets/pages/book_query.php" method="post" class="form-container">
         <select name="type" required>
+            <option value="">--請選擇--</option>
             <option value="ISBN">ISBN</option>
             <option value="title">書名</option>
             <option value="genre">類別</option>
