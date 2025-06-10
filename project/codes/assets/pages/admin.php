@@ -5,6 +5,7 @@
         <select id="action" name="action" required>
             <option value="">-- 請選擇 --</option>
             <option value="add">新增書籍</option>
+            <option value="update">修改書籍</option>
             <option value="delete">刪除書籍</option>
             <option value="view_logs">查看借閱紀錄</option>
         </select>

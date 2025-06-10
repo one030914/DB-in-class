@@ -123,6 +123,10 @@ if ($action === 'login') {
         // 自動登入
         $_SESSION['user_id'] = $uid;
         $_SESSION['username'] = $username;
+        $role_stmt = $conn->prepare("SELECT role FROM user WHERE UID = :uid");
+        $role_stmt->bindValue(':uid', $uid);
+        $role_stmt->execute();
+        $_SESSION['role'] = $role_stmt->fetchColumn();
         header("Location: ../../index.php");
         exit;
 

@@ -28,8 +28,29 @@ if ($check->fetchColumn() > 0) {
     exit;
 }
 
+// 檢查該書籍是否存在
+$book_check = $conn->prepare("SELECT COUNT(*) FROM book WHERE ISBN = :isbn");
+$book_check->bindValue(':isbn', $isbn);
+$book_check->execute();
+if ($book_check->fetchColumn() == 0) {
+    header("Location: /index.php?section=user&borrow=notfound");
+    exit;
+}
+
+// 檢查書籍是否已有借閱未歸還
+$check_book = $conn->prepare("
+    SELECT COUNT(*) FROM borrowlog
+    WHERE ISBN = :isbn AND is_returned = 0
+");
+$check_book->bindValue(':isbn', $isbn);
+$check_book->execute();
+if ($check_book->fetchColumn() > 0) {
+    header("Location: /index.php?section=user&borrow=unavailable");
+    exit;
+}
+
 // 寫入借書紀錄
-$due = date("Y-m-d H:i:s", strtotime($borrow . " +14 days")); // 兩週借期
+$due = date("Y-m-d H:i:s", strtotime($borrow . " +14 days"));
 
 $stmt = $conn->prepare("
     INSERT INTO borrowlog (UID, ISBN, borrow_date, due_date, is_returned, fine)

@@ -23,8 +23,14 @@
                 case 'invalid':
                     echo "<div class='alert alert-warning'>⚠️ 資料輸入不完整或錯誤。</div>";
                     break;
+                case 'notfound':
+                    echo "<div class='alert alert-danger'>❌ 該書籍不存在，請檢查 ISBN。</div>";
+                    break;
                 case 'error':
                     echo "<div class='alert alert-danger'>❌ 借書失敗，請檢查您的輸入。</div>";
+                    break;
+                case 'unavailable':
+                    echo "<div class='alert alert-warning'>⚠️ 該書籍目前無法借閱，請稍後再試。</div>";
                     break;
                 default:
                     echo "<div class='alert alert-danger'>❌ 借書失敗，請再試一次。</div>";
