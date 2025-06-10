@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2025 at 05:44 PM
+-- Generation Time: Jun 10, 2025 at 07:33 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,7 +40,7 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`AID`, `password`, `login_time`, `failed_attempts`, `is_locked`) VALUES
-(1, '$2b$12$t2Q8xZaZ22KPoeOE/KzCIOwXnEfHiTjQAspxnKfkuYzyfWBTyHbIC', '2025-05-15 06:43:31', 2, 0),
+(1, '$2y$10$Gf6Iftn7ZLlw8sNOkJ8uZuWd9rhtXlHfgcoxJigv1zeQolHWZRUXy', '2025-06-11 00:44:50', 0, 0),
 (2, '$2b$12$t2Q8xZaZ22KPoeOE/KzCIOwXnEfHiTjQAspxnKfkuYzyfWBTyHbIC', '2025-05-31 06:43:31', 0, 0),
 (3, '$2b$12$t2Q8xZaZ22KPoeOE/KzCIOwXnEfHiTjQAspxnKfkuYzyfWBTyHbIC', '2025-05-16 06:43:31', 0, 0),
 (4, '$2b$12$t2Q8xZaZ22KPoeOE/KzCIOwXnEfHiTjQAspxnKfkuYzyfWBTyHbIC', '2025-05-31 06:43:31', 0, 0),
@@ -49,9 +49,7 @@ INSERT INTO `account` (`AID`, `password`, `login_time`, `failed_attempts`, `is_l
 (7, '$2b$12$t2Q8xZaZ22KPoeOE/KzCIOwXnEfHiTjQAspxnKfkuYzyfWBTyHbIC', '2025-05-26 06:43:31', 1, 0),
 (8, '$2b$12$t2Q8xZaZ22KPoeOE/KzCIOwXnEfHiTjQAspxnKfkuYzyfWBTyHbIC', '2025-06-03 06:43:31', 0, 0),
 (9, '$2b$12$t2Q8xZaZ22KPoeOE/KzCIOwXnEfHiTjQAspxnKfkuYzyfWBTyHbIC', '2025-05-27 06:43:31', 0, 0),
-(10, '$2b$12$t2Q8xZaZ22KPoeOE/KzCIOwXnEfHiTjQAspxnKfkuYzyfWBTyHbIC', '2025-06-08 23:31:55', 0, 0),
-(11, '$2y$10$DX0fZnSifLqsSNWpom0TVedtq2rGgYFJWt7PXIafgP/DUyVpmRW.W', '2025-06-08 14:56:28', 0, 0),
-(9999, '$2y$10$Gf6Iftn7ZLlw8sNOkJ8uZuWd9rhtXlHfgcoxJigv1zeQolHWZRUXy', '2025-06-08 22:54:22', 1, 0);
+(10, '$2b$12$t2Q8xZaZ22KPoeOE/KzCIOwXnEfHiTjQAspxnKfkuYzyfWBTyHbIC', '2025-06-11 00:13:47', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -82,7 +80,8 @@ INSERT INTO `book` (`ISBN`, `title`, `genre`, `year`, `author`, `PID`) VALUES
 ('9780000000007', 'Book Title 7', 'Fiction', '2015', 'Author 7', 1),
 ('9780000000008', 'Book Title 8', 'Non-fiction', '2008', 'Author 8', 2),
 ('9780000000009', 'Book Title 9', 'Sci-fi', '1999', 'Author 9', 5),
-('9780000000010', 'Book Title 10', 'History', '2002', 'Author 10', 3);
+('9780000000010', 'Book Title 10', 'History', '2002', 'Author 10', 3),
+('9780000010000', 'title', 'Sci-fi', '2003', 'author', 10);
 
 -- --------------------------------------------------------
 
@@ -109,7 +108,12 @@ INSERT INTO `borrowlog` (`LID`, `UID`, `ISBN`, `borrow_date`, `due_date`, `retur
 (6, '10', '9780000000002', '2025-06-08 00:00:00', '2025-06-22 00:00:00', '2025-06-08 11:53:08', 1, 0),
 (7, '10', '9780000000002', '2025-06-08 00:00:00', '2025-06-22 00:00:00', '2025-06-08 11:57:36', 1, 0),
 (8, '10', '9780000000002', '2025-02-04 00:00:00', '2025-02-18 00:00:00', '2025-06-08 12:00:15', 1, 1110),
-(9, '9999', '9780000000002', '2025-06-01 00:00:00', '2025-06-15 00:00:00', '2025-06-08 12:02:56', 1, 0);
+(9, '9999', '9780000000002', '2025-06-01 00:00:00', '2025-06-15 00:00:00', '2025-06-08 12:02:56', 1, 0),
+(10, '9999', '9780000000002', '2025-06-10 00:00:00', '2025-06-24 00:00:00', '2025-06-10 16:54:56', 1, 0),
+(11, '10', '9780000000002', '2025-06-11 00:00:00', '2025-06-25 00:00:00', '2025-06-10 18:18:41', 1, 0),
+(12, '10', '9780000000002', '2025-06-11 00:00:00', '2025-06-25 00:00:00', '2025-06-10 18:18:40', 1, 0),
+(13, '10', '9780000000002', '2025-06-11 00:00:00', '2025-06-25 00:00:00', '2025-06-10 18:31:13', 1, 0),
+(15, '10', '9780000000001', '2025-04-01 00:00:00', '2025-04-15 00:00:00', '2025-06-10 18:31:25', 1, 570);
 
 -- --------------------------------------------------------
 
@@ -154,7 +158,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`UID`, `name`, `email`, `join_date`, `role`) VALUES
-(1, 'Bob', 'bob1@mail.com', '2025-01-24 06:37:20', 'user'),
+(1, 'admin', 'admin@admin.com', '2025-06-08 15:42:18', 'admin'),
 (2, 'Charlie', 'charlie2@example.com', '2024-12-09 06:37:20', 'user'),
 (3, 'David', 'david3@test.com', '2024-12-21 06:37:20', 'user'),
 (4, 'Eva', 'eva4@test.com', '2024-12-17 06:37:20', 'user'),
@@ -163,9 +167,7 @@ INSERT INTO `user` (`UID`, `name`, `email`, `join_date`, `role`) VALUES
 (7, 'Hannah', 'hannah7@example.com', '2024-11-13 06:37:20', 'user'),
 (8, 'Ivan', 'ivan8@example.com', '2025-04-10 06:37:20', 'user'),
 (9, 'Judy', 'judy9@mail.com', '2025-01-22 06:37:20', 'user'),
-(10, 'Alice', 'alice10@test.com', '2024-09-07 06:37:20', 'user'),
-(11, 'test', 'test@123', '2025-06-08 14:51:43', 'user'),
-(9999, 'admin', 'admin@admin.com', '2025-06-08 15:42:18', 'admin');
+(10, 'Alice', 'alice10@test.com', '2024-09-07 06:37:20', 'user');
 
 --
 -- Indexes for dumped tables
@@ -218,13 +220,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `AID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000;
+  MODIFY `AID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 
 --
 -- AUTO_INCREMENT for table `borrowlog`
 --
 ALTER TABLE `borrowlog`
-  MODIFY `LID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `LID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `publisher`
@@ -236,7 +238,7 @@ ALTER TABLE `publisher`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `UID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000;
+  MODIFY `UID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
